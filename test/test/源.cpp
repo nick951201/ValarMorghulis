@@ -17,12 +17,12 @@ vector<string> source;
 
 int main(int argc, char* argv[])
 {
-	
+	cout << CV_VERSION << "\n";
 	DWORD start, end;
 	start = GetTickCount();
-	
-	string img1 = "1.jpg";
-	string img2 = "2.jpg";
+	//这里是2个要拼接的图片的文件名
+	string img1 = "DSC00003.jpg";
+	string img2 = "DSC00002.jpg";
 	
 	source.push_back(img1);
 	source.push_back(img2);
@@ -30,7 +30,7 @@ int main(int argc, char* argv[])
 	vector<string>::iterator iter;
 	for (iter = source.begin(); iter != source.end(); iter++)
 	{
-		cout << *iter;
+		
 		Mat img = imread(*iter);
 		if (img.empty())
 		{
